@@ -1,5 +1,4 @@
 
-
 const Header = () => {
   return (
     <div className="h-40 bg-red-800 my-2 flex justify-center items-center ">
