@@ -1,5 +1,6 @@
 import Nav from "./Components/Nav"
 import Header from "./Components/Header"
+import Body from "./Components/Body"
 
 function App() {
   
@@ -8,6 +9,7 @@ function App() {
     <>
       <Nav />
       <Header />
+      <Body /> 
     </>
   )
 }
