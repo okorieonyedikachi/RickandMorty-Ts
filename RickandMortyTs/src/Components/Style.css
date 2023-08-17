@@ -1,9 +1,0 @@
-
-@media    (max-width:480px) {
-    .character-container {
-        /* background-color: red; */
-       
-        flex-direction: column;
-       
-    }
-}
