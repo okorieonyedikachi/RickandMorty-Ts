@@ -8,7 +8,7 @@ const Footer = () => {
     const currentYear = getCurrentYear()
    
   return (
-    <footer className="bg-zinc-900 h-max fixed w-full bottom-0">
+    <footer className="bg-zinc-900 h-max w-full sticky bottom-0">
         <div>
             <p className="text-zinc-100 flex justify-center py-4">
                 by Dannie {currentYear}
