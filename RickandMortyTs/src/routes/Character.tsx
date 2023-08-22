@@ -1,19 +1,17 @@
 import Header from "../Components/Header";
 import Body from "../Components/Body";
-import { ApolloProvider,ApolloClient, InMemoryCache } from "@apollo/client";
+import { useQuery } from "@apollo/client"
+import {LOAD_CHARACTERS} from '../Graphql/Queries'
 
 
-const client = new ApolloClient ({
-  cache: new InMemoryCache(),
-  uri: 'https://rickandmortyapi.com/graphql'
-});
 const Character = () => {
-  
+  const {data } = useQuery(LOAD_CHARACTERS);
+  console.log(data)
   return (
-    <ApolloProvider client={client}>
+    <>
       <Header />
       <Body />
-    </ApolloProvider>
+    </>
   );
 };
 

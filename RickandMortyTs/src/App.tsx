@@ -3,27 +3,22 @@ import Header from "./Components/Header";
 import Body from "./Components/Body";
 import Footer from "./Components/Footer";
 import Pagination from "./Components/Pagination"
-import { 
-  ApolloClient, 
-  InMemoryCache, 
- ApolloProvider,
-} from "@apollo/client";
+import { useQuery } from "@apollo/client"
+import {LOAD_CHARACTERS} from './Graphql/Queries'
 
- const client = new ApolloClient ({
-    cache: new InMemoryCache(),
-    uri: 'https://rickandmortyapi.com/graphql'
-  });
-  
 
 const App = () => {
+  const {data } = useQuery(LOAD_CHARACTERS);
+  console.log(data)
   return (
-    <ApolloProvider client={client}>
+    <>
+     
       <Nav />
       <Header />
       <Body /> 
       <Pagination />
       <Footer />
-      </ApolloProvider>
+      </>
   )
 }
 

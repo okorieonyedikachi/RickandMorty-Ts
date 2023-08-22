@@ -1,9 +1,6 @@
-// import { useQuery } from "@apollo/client"
-// import {LOAD_CHARACTERS} from '../Graphql/Queries'
 
 const Body = () => {
-  // const {data } = useQuery(LOAD_CHARACTERS);
-  // console.log(data)
+ 
   return (
     <div className="h-fit bg-zinc-800 py-6 flex justify-center">
       <div className="character-container h-100 w-3/4 flex flex-row flex-wrap 
