@@ -1,11 +1,17 @@
 
-const Body = () => {
- 
+
+
+const Body = (data) => {
+  console.log(data.data.characters.results[0])
+  
+  // const renderData = randomizeData? shuffleArray(data) : data;
+  
   return (
     <div className="h-fit bg-zinc-800 py-6 flex justify-center">
       <div className="character-container h-100 w-3/4 flex flex-row flex-wrap 
           justify-between  max-[480px]:flex-col  max-[480px]:content-center">
-        <article className="bg-[#3C3E44] h-48 w-5/12 rounded-lg m-2 flex max-[800px]:h-fit max-[480px]:flex-col 
+          
+        <article  className="bg-[#3C3E44] h-48 w-5/12 rounded-lg m-2 flex max-[800px]:h-fit max-[480px]:flex-col 
           max-[480px]:w-9/12 max-[480px]:justify-content-center">
           <div className="img-wrapper w-2/5 h-full max-[480px]:w-full">
             <img
@@ -25,7 +31,7 @@ const Body = () => {
             </div>
             <div className="mb-2.5">
               <span className="text-sm text-gray-900">
-                Last known Location:
+                Origin:
               </span>
               <p className="text-zinc-100">Earth(C-137)</p>
             </div>
@@ -35,7 +41,8 @@ const Body = () => {
             </div>
           </div>
         </article>
-        <article className="bg-[#3C3E44] h-48 w-5/12 rounded-lg m-2 flex max-[800px]:h-fit max-[480px]:flex-col 
+        
+        {/* <article className="bg-[#3C3E44] h-48 w-5/12 rounded-lg m-2 flex max-[800px]:h-fit max-[480px]:flex-col 
             max-[480px]:w-9/12 max-[480px]:justify-content-center">
           <div className="img-wrapper w-2/5 h-full max-[480px]:w-full">
             <img
@@ -122,13 +129,14 @@ const Body = () => {
               <p className="text-zinc-100">Pilot</p>
             </div>
           </div>
-        </article>
+        </article> */}
       </div>
     </div>
     
   );
 };
 
+
+
 export default Body;
 
-// max-[480px]:justify-self-auto

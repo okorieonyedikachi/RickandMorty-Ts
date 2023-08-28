@@ -8,14 +8,17 @@ import {LOAD_CHARACTERS} from './Graphql/Queries'
 
 
 const App = () => {
-  const {data } = useQuery(LOAD_CHARACTERS);
-  console.log(data)
+  const {data, loading, error } = useQuery(LOAD_CHARACTERS);
+  
+  if (loading) return <p>Still Loading </p>
+  // if (data) console.log (data)
+else{console.log(error)}
   return (
     <>
      
       <Nav />
       <Header />
-      <Body /> 
+      <Body data={data} randomizeData={true}/> 
       <Pagination />
       <Footer />
       </>

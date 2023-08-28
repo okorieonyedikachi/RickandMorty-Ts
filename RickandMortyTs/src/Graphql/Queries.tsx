@@ -5,8 +5,23 @@ export const LOAD_CHARACTERS = gql `
         characters {
             results {
                 name
+                status
+                image
             }
         }
     }
 `
-console.log(LOAD_CHARACTERS)
+
+export const LOAD_EPISODES = gql `
+    query {
+        episodes{
+        results{
+        id
+        name
+        air_date
+        }
+        
+        }
+  
+    }
+`
