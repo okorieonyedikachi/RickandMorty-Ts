@@ -14,7 +14,7 @@ const Character = () => {
   return (
     <>
       <Header />
-      <Body data={data} randomizeData={false}/>
+      <Body data={data} />
       <Pagination />
       <Footer/>
     </>
