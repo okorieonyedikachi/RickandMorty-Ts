@@ -8,13 +8,16 @@ import Footer from "../Components/Footer";
 
 const Character = () => {
   const {data} = useQuery(LOAD_CHARACTERS);
-  console.log(data)
-  console.log("data")
-  if (data) console.log (data.characters.results)
+  if (!data) {
+    return null
+  }
+  const characters = data?.characters?.results;
+  // console.log("charac", characters)
+  // console.log (data.characters.results)
   return (
     <>
       <Header />
-      <Body data={data} />
+      <Body data={characters}  />
       <Pagination />
       <Footer/>
     </>
