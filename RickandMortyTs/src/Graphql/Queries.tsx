@@ -24,9 +24,10 @@ export const LOAD_EPISODES = gql`
   query {
     episodes {
       results {
-        id
         name
+        episode
         air_date
+        created
       }
     }
   }

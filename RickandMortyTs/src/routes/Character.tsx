@@ -12,12 +12,11 @@ const Character = () => {
     return null
   }
   const characters = data?.characters?.results;
-  // console.log("charac", characters)
-  // console.log (data.characters.results)
+ 
   return (
     <>
       <Header />
-      <Body data={characters}  />
+      <Body data={characters} isHomescreen = {false} />
       <Pagination />
       <Footer/>
     </>

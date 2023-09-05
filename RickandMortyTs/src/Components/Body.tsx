@@ -1,4 +1,4 @@
-const Body = ({ data }) => {
+const Body = ({ data, isHomescreen }) => {
   return (
     <div className="h-fit bg-zinc-800 py-6 flex justify-center">
       <div
@@ -7,13 +7,15 @@ const Body = ({ data }) => {
       >
         {data?.map((item, i) => {
           console.log(item);
-          if (i > 5) {
+          
+          
+          if (i > 5 && isHomescreen == true) {
             return;
           }
           return (
             <article
               key={i}
-              className="bg-[#3C3E44] h-48 w-5/12 rounded-lg m-2 flex max-[800px]:h-fit max-[480px]:flex-col 
+              className="bg-[#3C3E44] h-52 w-5/12 rounded-lg m-2 flex max-[800px]:h-fit max-[480px]:flex-col 
             max-[480px]:w-9/12 max-[480px]:justify-content-center"
             >
               <div className="img-wrapper w-2/5 h-full max-[480px]:w-full">
