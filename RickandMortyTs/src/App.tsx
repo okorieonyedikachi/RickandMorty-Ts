@@ -2,7 +2,6 @@ import Nav from "./Components/Nav";
 import Header from "./Components/Header";
 import Body from "./Components/Body";
 import Footer from "./Components/Footer";
-import Pagination from "./Components/Pagination"
 import { useQuery } from "@apollo/client"
 import {LOAD_CHARACTERS} from './Graphql/Queries'
 
@@ -13,7 +12,7 @@ const App = () => {
     return null
   }
   const homeCharac = data?.characters?.results;
-  // console.log(typeof [homeCharac]);
+  
   
   return (
 
@@ -22,7 +21,7 @@ const App = () => {
       <Nav />
       <Header />
       <Body data={homeCharac} isHomescreen = {true} /> 
-      <Pagination />
+      {/* <Pagination /> */}
       <Footer />
       </>
   )

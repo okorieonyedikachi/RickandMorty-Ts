@@ -1,4 +1,19 @@
-const Body = ({ data, isHomescreen }) => {
+interface BodyProps {
+  isHomescreen: boolean
+  data: {
+    image: string;
+    name: string;
+    status: string;
+    species: string;
+    origin: {
+      name: string;
+    };
+    gender: string
+  } []
+}
+
+const Body = ({ data, isHomescreen } :BodyProps) => {
+
   return (
     <div className="h-fit bg-zinc-800 py-6 flex justify-center">
       <div
@@ -6,9 +21,6 @@ const Body = ({ data, isHomescreen }) => {
           justify-between  max-[480px]:flex-col  max-[480px]:content-center"
       >
         {data?.map((item, i) => {
-          console.log(item);
-          
-          
           if (i > 5 && isHomescreen == true) {
             return;
           }

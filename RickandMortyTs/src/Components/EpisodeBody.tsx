@@ -1,6 +1,17 @@
 import image from "../assets/rickandmorty.jpg"
 
-const EpisodeBody = ({data}) => {
+interface EpisodeBodyProps {
+  isHomescreen: boolean
+  data: {
+    image: string;
+    name: string;
+    episode : string;
+    air_date: string;
+    created: string
+  } []
+}
+
+const EpisodeBody = ({data} :EpisodeBodyProps) => {
   return (
     <div className="h-fit bg-zinc-800 py-6 flex justify-center">
       <div

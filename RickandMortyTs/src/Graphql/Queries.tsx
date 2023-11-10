@@ -1,8 +1,14 @@
 import { gql } from "@apollo/client";
 
 export const LOAD_CHARACTERS = gql`
-  query {
-    characters {
+  query ($page: Int, $filter: FilterCharacter) {
+    characters(page: $page, filter: $filter) {
+      info {
+        pages
+        count
+        next
+        prev
+      }
       results {
         name
         status
@@ -13,7 +19,7 @@ export const LOAD_CHARACTERS = gql`
           name
         }
         episode {
-            id
+          id
         }
       }
     }

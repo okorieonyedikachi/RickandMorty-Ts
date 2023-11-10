@@ -7,7 +7,7 @@ import Footer from "../Components/Footer";
 
 
 const Character = () => {
-  const {data} = useQuery(LOAD_CHARACTERS);
+  const {data,  loading, fetchMore } = useQuery(LOAD_CHARACTERS,  { variables: { page: 1, filter: {} } })
   if (!data) {
     return null
   }
