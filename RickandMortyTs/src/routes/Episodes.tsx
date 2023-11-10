@@ -2,7 +2,6 @@ import Header from "../Components/Header"
 import { useQuery } from "@apollo/client"
 import { LOAD_EPISODES } from "../Graphql/Queries";
 import EpisodeBody from "../Components/EpisodeBody";
-import Pagination from "../Components/Pagination";
 import Footer from "../Components/Footer";
 
 const Episodes = () => {
@@ -15,12 +14,11 @@ const Episodes = () => {
   
   return (
     <>
-        <Header />
-        <EpisodeBody data = {episodeData}/>
-        <Pagination />
-        <Footer />
+      <Header />
+      <EpisodeBody data={episodeData} isHomescreen={false} />
+      <Footer />
     </>
-  )
+  );
 }
 
 export default Episodes

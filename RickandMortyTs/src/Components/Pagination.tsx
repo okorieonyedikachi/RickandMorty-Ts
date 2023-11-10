@@ -1,22 +1,22 @@
-import { useState } from "react"
 
-const Pagination = () => {
-    const [pageNumber, setPageNumber] = useState(1)
+type PaginationProps = {
+  page: number;
+  setPage: React.Dispatch<React.SetStateAction<number>>;
+};
 
-
-    const handlePrevBtn = () => {
-      if (pageNumber > 1 ) {
-         setPageNumber(pageNumber - 1);
-      }
-    };
-
-    const handleNextBtn = ()=>{
-      setPageNumber(pageNumber + 1)
-    }
-    
-
-    const decrememt: string = "<"
-    const increment: string = ">"
+const Pagination = ({page, setPage}:PaginationProps) => {
+     
+      const decrememt: string = "<";
+      const increment: string = ">";
+      const handlePrevBtn = () => {
+        if (page > 1) {
+          setPage(page - 1);
+        }
+      };
+      const handleNextBtn = () => {
+        setPage(page + 1);
+      };
+ 
 
     
   return (
@@ -28,7 +28,7 @@ const Pagination = () => {
         >
           {decrememt}
         </button>
-        <p>{pageNumber}</p>
+        <p>{page}</p>
         <button
           className="w-8 h-6 bg-gray-500 rounded flex justify-center mx-10"
           onClick={handleNextBtn}

@@ -4,21 +4,27 @@ import { useQuery } from "@apollo/client"
 import {LOAD_CHARACTERS} from '../Graphql/Queries'
 import Pagination from "../Components/Pagination";
 import Footer from "../Components/Footer";
+import { useState } from "react";
 
 
 const Character = () => {
-  const {data,  loading, fetchMore } = useQuery(LOAD_CHARACTERS,  { variables: { page: 1, filter: {} } })
+   const [page, setPage] = useState(1);
+  const {data} = useQuery(LOAD_CHARACTERS, {variables:{page}})
   if (!data) {
     return null
   }
   const characters = data?.characters?.results;
  
+  
+
+
   return (
     <>
       <Header />
-      <Body data={characters} isHomescreen = {false} />
-      <Pagination />
-      <Footer/>
+      <Body data={characters} isHomescreen={false} />
+      <Pagination page={page} setPage = {setPage} />
+     
+      <Footer />
     </>
   );
 };
